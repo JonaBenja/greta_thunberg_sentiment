@@ -42,7 +42,7 @@ Italian query: http://news.google.com/?q=greta+thunberg&gl=it
 6) Run the file `polyglot_test.py` to make sure polyglot is correctly installed. If there are no errors, the installation was succesfull!
 
 ### WINDOWS
-1) Follow the instructions given in this link:
+1) Follow the instructions given in these links:
 - https://github.com/Jcharis/Natural-Language-Processing-Tutorials/blob/master/NLP_with_Polyglot/NLP%20with%20Polyglot%20.ipynb
 - https://www.alirookie.com/post/install-polyglot-on-windows
 
