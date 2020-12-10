@@ -19,22 +19,23 @@ def filter_stopwords(data, stopwords):
     """
     Filters stopwords and punctuation from a dataset
     """
+    #filtered_data = ''.join(x for x in list(data) if x.isprintable())
     for tokens in list(data):
         if type(tokens) == tuple:
             token = tokens[0]
             token = token.casefold()
-            if token in stopwords or token in punctuation or token == '”':
+            if token in stopwords or token in punctuation or token == '”' or 'u20' in token:
                 del data[tokens]
 
         elif len(tokens) == 1:
             token = tokens
             token = token.casefold()
-            if token in stopwords or token in punctuation or token == '”':
+            if token in stopwords or token in punctuation or token == '”' or 'u20' in token:
                 del data[tokens]
         elif len(tokens) > 1:
             for token in tokens.split():
                 token = token.casefold()
-                if token in stopwords or token in punctuation or token == '”':
+                if token in stopwords or token in punctuation or token == '”' or 'u20' in token:
                     del data[tokens]
 
     return data

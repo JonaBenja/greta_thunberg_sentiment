@@ -1,5 +1,3 @@
-# lad-assignment1
-
 #README.txt
 
 ### INTRODUCTION
@@ -84,4 +82,6 @@ or
 - check if you have numpy installed (polyglot is based on numpy)
 - check if you are using the right versions of the files above
 
-If nothing compleately works after 1h of attempts, reach out to: gabrielecatanese@gmail.com
+If nothing completely works after 1h of attempts, reach out to: gabrielecatanese@gmail.com
+
+NEW INFO

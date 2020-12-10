@@ -14,7 +14,7 @@ text_sentiment = defaultdict(dict)
 sents_sentiment = defaultdict(dict)
 
 # Read in data
-tsv_file = "../data/nl/nl_greta_overview.tsv"
+tsv_file = "../data/nl/decoded_nl_greta_overview.tsv"
 content = pd.read_csv(tsv_file, sep="\t", keep_default_na=False, header=0, encoding = 'utf-8')
 articles = content['Text']
 titles = content['Title']
@@ -22,18 +22,29 @@ publishers = content['Publisher']
 
 # Save mean sentiment of sentences per article
 for text, publisher in zip(articles, publishers):
-    try:
-        sent_senti = float(mean([sent.polarity for sent in Text(text, hint_language_code= 'nl').sentences]))
-        greta_sent = 0
+    text = ''.join(x for x in text if x.isprintable())
+    sentences = Text(text, hint_language_code = 'nl').sentences
+    sent_senti = float(mean([sent.polarity for sent in sentences]))
+    greta_sent = 0.0
+    sent_entities = [sent.entities for sent in sentences]
+    for sent in sentences:
+        sent_entities = sent.entities
+        if len(sent_entities) > 0:
+            for entity in sent_entities:
+                if 'Greta' in entity:
+                    try:
+                        greta_sent += entity.positive_sentiment
+                        greta_sent -= entity.positive_sentiment
+                        print(greta_sent)
+                    except:
+                        greta_sent += 0
 
-        if publisher not in sents_sentiment:
-            sents_sentiment[publisher]['article'] = [sent_senti]
-            sents_sentiment[publisher]['greta'] = [greta_sent]
-        else:
-            sents_sentiment[publisher]['article'].append(sent_senti)
-            sents_sentiment[publisher]['greta'].append(greta_sent)
-    except:
-        error = 'pycld2.error'
+    if publisher not in sents_sentiment:
+        sents_sentiment[publisher]['article'] = [sent_senti]
+        sents_sentiment[publisher]['greta'] = [greta_sent]
+    else:
+        sents_sentiment[publisher]['article'].append(sent_senti)
+        sents_sentiment[publisher]['greta'].append(greta_sent)
 
 art_pub_sent = defaultdict(dict)
 
@@ -48,6 +59,7 @@ print(art_pub_sent)
 SENTIMENT PLOT
 """
 
+"""
 fig, ax = plt.subplots(1, 1, figsize = (10, 6))
 x = art_pub_sent.keys()
 y = [art_pub_sent[publisher]['article'] for publisher in art_pub_sent]
@@ -58,7 +70,7 @@ plt.bar(x, y)
 fig.tight_layout()
 fig.savefig("../data/plots/nl_publisher_sentiment.png")
 #plt.show()
-
+"""
 
 """"
 publishers = [publisher for publisher in art_pub_sent]
