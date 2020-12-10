@@ -85,3 +85,5 @@ or
 - check if you are using the right versions of the files above
 
 If nothing completely works after 1h of attempts, reach out to: gabrielecatanese@gmail.com
+
+NEW INFO
