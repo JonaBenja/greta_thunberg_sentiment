@@ -11,7 +11,7 @@ import json
 # Read in the Dutch data and Stanza pipeline
 nl_nlp = stanza.Pipeline('nl')
 
-nl_content = pd.read_csv('nl/nl_greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
+nl_content = pd.read_csv('../data/nl/nl_greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
 
 #nl_content.fillna('Unknown')
 
@@ -20,7 +20,7 @@ nl_statistics = defaultdict(dict)
 # Read in the Italian data and Stanza pipeline
 it_nlp = stanza.Pipeline('it')
 
-it_content = pd.read_csv('it/it_greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
+it_content = pd.read_csv('../data/it/it_greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
 
 #it_content.fillna('Unknown')
 
@@ -123,10 +123,10 @@ for article in it_content['Text']:
         print(i)
 pickle.dump(it_texts, open('processed_articles/it_articles_stanza', "wb"))
 
-# Load Stanza files of data
-nl_nlp_output = pickle.load(open('processed_articles/nl_articles_stanza',"rb"))
-it_nlp_output = pickle.load(open('processed_articles/it_articles_stanza',"rb"))
 """
+# Load Stanza files of data
+nl_nlp_output = pickle.load(open('../data/processed_articles/nl_articles_stanza',"rb"))
+it_nlp_output = pickle.load(open('../data/processed_articles/it_articles_stanza',"rb"))
 
 """
 #DUTCH TOKENS
@@ -235,8 +235,8 @@ it_statistics['content']['n-gram_excl_stopwords'] = ngram_stopwords.most_common(
 #SAVE BASIC STATISTICS
 """
 
-with open('statistics/nl_statistics.json', 'w') as outfile:
+with open('../data/statistics/nl_statistics.json', 'w') as outfile:
     json.dump(nl_statistics, outfile)
 
-with open('statistics/it_statistics.json', 'w') as outfile:
+with open('../data/statistics/it_statistics.json', 'w') as outfile:
     json.dump(it_statistics, outfile)
