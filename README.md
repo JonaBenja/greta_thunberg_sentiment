@@ -66,7 +66,7 @@ When you clone the file from git, extract the content in the same directory that
 3) Explore the content of the downloaded git folder that should be named 'polyglot':
 - find the child folder named with the same name 'polyglot' inside it (ex. C:>Users>YourName>polyglot>polyglot (like a matryoshka :D ))
 - take the 'polyglot' folder out of the parent folder
-- put it in the same directory (do not substitute the original file! To avoid that, you can rename the parent folder)
+- put it in the same directory (do not substitute the original file! To avoid that, you can rename the parent folder) 
 
 4) FINALLY run on the command line:
 - python setup.py install
