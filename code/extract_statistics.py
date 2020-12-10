@@ -208,15 +208,9 @@ it_statistics['content']['freq_token_pos'] = token_pos_frequencies.most_common(5
 
 token_stopwords = filter_stopwords(token_frequencies, it_stopwords)
 
-with open('frequencies/it_token_stopwords.json', 'w') as outfile:
-    json.dump(token_stopwords, outfile)
-
 it_statistics['content']['freq_token_excl_stopwords'] = token_stopwords.most_common(5)
 
 token_pos_stopwords = filter_stopwords(token_pos_frequencies, it_stopwords)
-
-#with open('frequencies/it_token_pos_stopwords.json', 'w') as outfile:
-    #json.dump(token_pos_stopwords, outfile)
 
 it_statistics['content']['freq_token_pos_excl_stopwords'] = token_pos_stopwords.most_common(5)
 
