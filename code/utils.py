@@ -3,6 +3,9 @@ from collections import Counter
 from string import punctuation
 
 def calculate_ngram_frequencies(n, nlp_output):
+    """
+    Calculates the frequencies for alle n-grams in a dataset
+    """
     ngram_frequencies = Counter()
 
     for data in nlp_output:
@@ -13,6 +16,9 @@ def calculate_ngram_frequencies(n, nlp_output):
     return ngram_frequencies
 
 def filter_stopwords(data, stopwords):
+    """
+    Filters stopwords and punctuation from a dataset
+    """
     for tokens in list(data):
         if type(tokens) == tuple:
             token = tokens[0]
