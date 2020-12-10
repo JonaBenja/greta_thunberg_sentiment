@@ -168,15 +168,8 @@ nl_statistics['content']['freq_token_pos'] = token_pos_frequencies.most_common(1
 # Save tokens frequencies and token-pos frequencies without stopwords
 token_stopwords = filter_stopwords(token_frequencies, nl_stopwords)
 
-with open('frequencies/nl_token_stopwords.json', 'w') as outfile:
-    json.dump(token_stopwords, outfile)
-
 nl_statistics['content']['freq_token_excl_stopwords'] = token_stopwords.most_common(10)
-
 token_pos_stopwords = filter_stopwords(token_pos_frequencies, nl_stopwords)
-
-#with open('frequencies/nl_token_pos_stopwords.json', 'w') as outfile:
-    #json.dump(token_pos_stopwords, outfile)
 
 nl_statistics['content']['freq_token_pos_excl_stopwords'] = token_pos_stopwords.most_common(10)
 
