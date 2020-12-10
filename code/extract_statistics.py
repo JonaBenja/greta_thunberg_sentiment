@@ -11,7 +11,7 @@ import json
 # Read in the Dutch data and Stanza pipeline
 nl_nlp = stanza.Pipeline('nl')
 
-nl_content = pd.read_csv('../data/nl/greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
+nl_content = pd.read_csv('../data/nl/nl_greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
 
 #nl_content.fillna('Unknown')
 
@@ -81,7 +81,7 @@ CONTENT
 nl_stopwords = nltk.corpus.stopwords.words('dutch')
 nl_stopwords.extend(['gaan', 'we', 'zeggen', 'moeten', 'maken', 'zien'])
 it_stopwords = nltk.corpus.stopwords.words('italian')
-it_stopwords.extend(['essere', 'avere'])
+it_stopwords.extend(['essere', 'avere', 'fare'])
 
 # Extract length of texts in tokens
 text_lengths = []
