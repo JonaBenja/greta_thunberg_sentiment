@@ -16,15 +16,19 @@ def filter_stopwords(data, stopwords):
     for tokens in list(data):
         if type(tokens) == tuple:
             token = tokens[0]
-            if token.casefold() in stopwords or token.casefold() in punctuation:
+            token = token.casefold()
+            if token in stopwords or token in punctuation or token == '”':
                 del data[tokens]
+
         elif len(tokens) == 1:
             token = tokens
-            if token.casefold() in stopwords or token.casefold() in punctuation:
+            token = token.casefold()
+            if token in stopwords or token in punctuation or token == '”':
                 del data[tokens]
         elif len(tokens) > 1:
             for token in tokens.split():
-                if token.casefold() in stopwords or token.casefold() in punctuation:
+                token = token.casefold()
+                if token in stopwords or token in punctuation or token == '”':
                     del data[tokens]
 
     return data
