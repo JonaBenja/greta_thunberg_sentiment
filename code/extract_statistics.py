@@ -11,7 +11,7 @@ import json
 # Read in the Dutch data and Stanza pipeline
 nl_nlp = stanza.Pipeline('nl')
 
-nl_content = pd.read_csv('../data/nl/nl_greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
+nl_content = pd.read_csv('../data/nl/greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
 
 #nl_content.fillna('Unknown')
 
@@ -29,6 +29,7 @@ it_statistics = defaultdict(dict)
 """
 METADATA
 """
+
 # Count number of authors
 authors = Counter(nl_content['Author'].str.casefold())
 nl_statistics['metadata']['n_authors'] = len(authors)
@@ -78,7 +79,9 @@ CONTENT
 """
 # Get stopwords of languages from NLTK
 nl_stopwords = nltk.corpus.stopwords.words('dutch')
+nl_stopwords.extend(['gaan', 'we', 'zeggen', 'moeten', 'maken', 'zien'])
 it_stopwords = nltk.corpus.stopwords.words('italian')
+it_stopwords.extend(['essere', 'avere'])
 
 # Extract length of texts in tokens
 text_lengths = []
@@ -110,7 +113,7 @@ for article in nl_content['Text']:
         processed_text = nl_nlp(article)
         nl_texts.append(processed_text)
         print(i)
-pickle.dump(nl_texts, open('processed_articles/nl_articles_stanza', "wb"))
+pickle.dump(nl_texts, open('../data/processed_articles/nl_articles_stanza', "wb"))
 
 print("Loading Stanza IT")
 it_texts = []
@@ -121,7 +124,7 @@ for article in it_content['Text']:
         processed_text = it_nlp(article)
         it_texts.append(processed_text)
         print(i)
-pickle.dump(it_texts, open('processed_articles/it_articles_stanza', "wb"))
+pickle.dump(it_texts, open('../data/processed_articles/it_articles_stanza', "wb"))
 
 """
 # Load Stanza files of data
