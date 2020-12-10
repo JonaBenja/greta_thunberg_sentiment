@@ -1,6 +1,3 @@
-# lad-assignment1
-
-###HELLO
 #README.txt
 
 ### INTRODUCTION
