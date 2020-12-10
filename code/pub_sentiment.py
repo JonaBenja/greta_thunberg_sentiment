@@ -55,57 +55,34 @@ DUTCH
 text_sentiment = defaultdict(dict)
 sents_sentiment = defaultdict(dict)
 
-tsv_file = "nl/nl_greta_overview.tsv"
+tsv_file = "../data/nl/nl_greta_overview.tsv"
 content = pd.read_csv(tsv_file, sep="\t", keep_default_na=False, header=0, encoding = 'utf-8')
 titles = content['Title']
 articles = content['Text']
 publishers = content['Publisher']
 
-greta_sentiment = dict()
-i = 0
 for title, text, publisher in zip(titles, articles, publishers):
-    i += 1
-    if i < 10:
-        try:
-            entities = []
-            sentences = [sent for sent in Text(text, hint_language_code= 'nl').sentences]
-            sent_senti = float(mean([sent.polarity for sent in sentences]))
-            title_sent = Text(title).polarity
-            sent_entities = [sent.entities for sent in sentences]
-            for entities in sent_entities:
-                if len(entities) != 0:
-                    for entity in entities:
-                        if 'Greta' in entity:
-                            #greta_sent = entity.positive_sentiment
-                            print(entity)
+    try:
+        sent_senti = float(mean([sent.polarity for sent in Text(text, hint_language_code= 'nl').sentences]))
+        title_sent = Text(title).polarity
+        greta_sent = 0
 
-                            if publisher not in sents_sentiment:
-                                greta_sentiment[publisher] = [greta_sent]
-                            else:
-                                greta_sentiment[publisher].append(greta_sent)
+        if publisher not in sents_sentiment:
+            sents_sentiment[publisher]['article'] = [sent_senti]
+            sents_sentiment[publisher]['title'] = [title_sent]
+            sents_sentiment[publisher]['greta'] = [greta_sent]
+        else:
+            sents_sentiment[publisher]['article'].append(sent_senti)
+            sents_sentiment[publisher]['title'].append (title_sent)
+            sents_sentiment[publisher]['greta'].append(greta_sent)
+    except:
+        error = 'pycld2.error'
 
-            if publisher not in sents_sentiment:
-                sents_sentiment[publisher]['article'] = [sent_senti]
-                sents_sentiment[publisher]['title'] = [title_sent]
-
-            else:
-                sents_sentiment[publisher]['article'].append(sent_senti)
-                sents_sentiment[publisher]['title'].append(title_sent)
-
-
-        except Exception as e:
-            print(e)
-            print(entities)
-
-"""
 art_pub_sent = defaultdict(dict)
 for publisher in sents_sentiment:
     if len(sents_sentiment[publisher]['article']) > 3:
         art_pub_sent[publisher]['article'] = mean(sents_sentiment[publisher]['article'])
         art_pub_sent[publisher]['title'] = mean(sents_sentiment[publisher]['title'])
-        art_pub_sent[publisher]['greta'] = mean(sents_sentiment[publisher]['greta'])
-
-print(art_pub_sent)
 
 fig, ax = plt.subplots(1, 1, figsize = (10, 6))
 x = art_pub_sent.keys()
@@ -116,10 +93,10 @@ plt.title('ARTICLE SENTIMENT OF DUTCH PUBLISHERS')
 plt.bar(x, y)
 fig.tight_layout()
 #fig.savefig("new_plots/nl_publisher_sentiment.png")
-#plt.show()
+plt.show()
 
-"""
-"""
+
+""""
 publishers = [publisher for publisher in art_pub_sent]
 title_sent = [art_pub_sent[publisher]['title'] for publisher in art_pub_sent]
 art_sent = [art_pub_sent[publisher]['article'] for publisher in art_pub_sent]
