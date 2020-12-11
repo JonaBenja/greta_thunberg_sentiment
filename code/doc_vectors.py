@@ -66,7 +66,7 @@ content = pd.read_csv(tsv_file, sep="\t", keep_default_na=False, header=0, encod
 articles = content['Text']
 clusters = content['Cluster']
 
-nlp = spacy.load("nl_core_news_lg")
+nlp = spacy.load("it_core_news_lg")
 doc_vectors = [nlp(doc).vector for doc in articles]
 
 # Apply dimensionality reduction with PCA or T-SNE

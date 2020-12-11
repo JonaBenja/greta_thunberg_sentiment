@@ -3,10 +3,12 @@ import stanza
 import string
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
+import pickle
 from collections import defaultdict, Counter
 import nltk
 from gensim.models import KeyedVectors
 from sklearn.cluster import KMeans
+import json
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
@@ -17,7 +19,7 @@ DUTCH DOCUMENT KEYWORDS
 def preprocess(article):
     processed_article = nlp.process(article)
     all_lemmas = []
-    stopwords = ['de', 'en', 'van', 'ik', 'te', 'dat', 'die', 'in', 'een', 'hij', 'het', 'niet', 'zijn', 'is', 'was',
+    stopwords = ['de', 'en', 'van', 'ik', 'we', 'te', 'dat', 'die', 'in', 'een', 'hij', 'het', 'niet', 'zijn', 'is', 'was',
                  'op', 'aan', 'met', 'als', 'voor', 'had', 'er', 'maar', 'om', 'hem', 'dan', 'zou', 'of', 'wat', 'mijn',
                  'men', 'dit', 'zo', 'door', 'over', 'ze', 'zich', 'bij', 'ook', 'tot', 'je', 'mij', 'uit', 'der',
                  'daar', 'haar', 'naar', 'heb', 'hoe', 'heeft', 'hebben', 'deze', 'u', 'want', 'nog', 'zal', 'me',
@@ -71,11 +73,14 @@ not_in_embeddings = 0
 n_keywords = 0
 no_embedding = []
 
-for doc_keywords in keywords:
+keywords_dict = defaultdict(list)
+
+for i, doc_keywords in enumerate(keywords):
     doc_representation = []
     for keyword in doc_keywords:
         n_keywords += 1
         try:
+            keywords_dict[i].append(keyword)
             word_representation = fasttext_model[keyword]
             doc_representation.append(word_representation)
         except KeyError as e:
@@ -86,6 +91,9 @@ for doc_keywords in keywords:
     # Take the mean over the keywords
     mean_keywords = np.mean(doc_representation, axis=0)
     all_doc_representations.append(mean_keywords)
+
+with open('../data/clusters/nl_keywords.json', 'w') as outfile:
+    json.dump(keywords_dict, outfile)
 
 
 """
@@ -182,11 +190,14 @@ not_in_embeddings = 0
 n_keywords = 0
 no_embedding = []
 
-for doc_keywords in keywords:
+keywords_dict = defaultdict(list)
+
+for i, doc_keywords in enumerate(keywords):
     doc_representation = []
     for keyword in doc_keywords:
         n_keywords += 1
         try:
+            keywords_dict[i].append(keyword)
             word_representation = fasttext_model[keyword]
             doc_representation.append(word_representation)
         except KeyError as e:
@@ -198,6 +209,8 @@ for doc_keywords in keywords:
     mean_keywords = np.mean(doc_representation, axis=0)
     all_doc_representations.append(mean_keywords)
 
+with open('../data/clusters/it_keywords.json', 'w') as outfile:
+    json.dump(keywords_dict, outfile)
 
 """
 ITALIAN CLUSTERING
