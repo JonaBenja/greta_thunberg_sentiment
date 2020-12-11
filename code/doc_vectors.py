@@ -40,7 +40,7 @@ for x, y, cluster in zip(x_values, y_values, clusters):
     ax.plot(x, y, 'o', markersize=12, color=c)
 
 # Add title and description
-ax.set_title('Document vectors')
+ax.set_title('Dutch document vectors')
 description = "Dutch document vectors reduced to two dimensions using the t-sne algorithm. "
 fig.text(.51, .05, description, ha="center", fontsize=12)
 
@@ -55,14 +55,14 @@ cluster4 = mpatches.Circle((0.1, 0.1), color=colors[3], label='Cluster 4')
 
 plt.legend(handles=[cluster1, cluster2, cluster3, cluster4])
 fig.savefig("../data/plots/nl_clusterplot.png")
-#plt.show()
+plt.show()
 
 """
 ITALIAN DOCUMENT VECTORS
 """
 
 tsv_file = "../data/clusters/it_4_topic_clusters.tsv"
-content = pd.read_csv(tsv_file, sep=",", keep_default_na=False, header=0, encoding = 'utf-8')
+content = pd.read_csv(tsv_file, sep="\t", keep_default_na=False, header=0, encoding = 'utf-8')
 articles = content['Text']
 clusters = content['Cluster']
 
@@ -95,8 +95,8 @@ for x, y, cluster in zip(x_values, y_values, clusters):
     ax.plot(x, y, 'o', markersize=12, color=c)
 
 # Add title and description
-ax.set_title('Document vectors')
-description = "Dutch document vectors reduced to two dimensions using the t-sne algorithm. "
+ax.set_title('Italian document vectors')
+description = "Italian document vectors reduced to two dimensions using the t-sne algorithm. "
 fig.text(.51, .05, description, ha="center", fontsize=12)
 
 # Hide the ticks
@@ -110,4 +110,4 @@ cluster4 = mpatches.Circle((0.1, 0.1), color=colors[3], label='Cluster 4')
 
 plt.legend(handles=[cluster1, cluster2, cluster3, cluster4])
 fig.savefig("../data/plots/it_clusterplot.png")
-#plt.show()
+plt.show()
