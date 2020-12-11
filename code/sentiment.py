@@ -32,17 +32,38 @@ for publisher in sents_sentiment:
 d = sents_sentiment
 top10_publishers = sorted(d, key=lambda k: len(d[k]), reverse=True)[:10]
 
-fig, ax = plt.subplots(1, 1, figsize = (11, 6))
-x = top10_publishers
-y = [art_pub_sent[publisher] for publisher in top10_publishers]
-plt.xlabel('PUBLISHER')
-plt.ylabel('SENTIMENT"')
-plt.title('MEAN ARTICLE SENTIMENT OF DUTCH PUBLISHERS')
-plt.bar(x, y)
-fig.tight_layout()
-fig.savefig("../data/plots/nl_publisher_sentiment.png")
-#plt.show()
+publishers = top10_publishers
+sentiment = [art_pub_sent[publisher] for publisher in top10_publishers]
 
+x = np.arange(len(publishers))  # the label locations
+width = 0.50  # the width of the bars
+
+fig, ax = plt.subplots(1, 1, figsize = (16, 6))
+rects1 = ax.bar(x - width/2, sentiment, width, label='Men')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('SENTIMENT')
+ax.set_xlabel('PUBLISHER')
+ax.set_title('MEAN ARTICLE SENTIMENT OF DUTCH PUBLISHERS')
+ax.set_xticks(x)
+ax.set_xticklabels(publishers)
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect, publisher in zip(rects, top10_publishers):
+        label = len(sents_sentiment[publisher])
+        height = rect.get_height()
+        ax.annotate('{}'.format(label),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+autolabel(rects1)
+fig.tight_layout()
+plt.show()
+fig.savefig("../data/plots/nl_publisher_sentiment.png")
 
 """
 ITALIAN
@@ -75,13 +96,35 @@ top10_publishers = sorted(d, key=lambda k: len(d[k]), reverse=True)[:10]
 SENTIMENT PLOT
 """
 
-fig, ax = plt.subplots(1, 1, figsize = (17, 6))
-x = top10_publishers
-y = [art_pub_sent[publisher] for publisher in top10_publishers]
-plt.xlabel('PUBLISHER')
-plt.ylabel('SENTIMENT"')
-plt.title('MEAN ARTICLE SENTIMENT OF ITALIAN PUBLISHERS')
-plt.bar(x, y)
+publishers = top10_publishers
+sentiment = [art_pub_sent[publisher] for publisher in top10_publishers]
+
+x = np.arange(len(publishers))  # the label locations
+width = 0.50  # the width of the bars
+
+fig, ax = plt.subplots(1, 1, figsize = (16, 6))
+rects1 = ax.bar(x - width/2, sentiment, width, label='Men')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('SENTIMENT')
+ax.set_xlabel('PUBLISHER')
+ax.set_title('MEAN ARTICLE SENTIMENT OF ITALIAN PUBLISHERS')
+ax.set_xticks(x)
+ax.set_xticklabels(publishers)
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect, publisher in zip(rects, top10_publishers):
+        label = len(sents_sentiment[publisher])
+        height = rect.get_height()
+        ax.annotate('{}'.format(label),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+autolabel(rects1)
 fig.tight_layout()
-fig.savefig("../data/plots/it_publisher_sentiment.png")
 plt.show()
+fig.savefig("../data/plots/it_publisher_sentiment.png")
