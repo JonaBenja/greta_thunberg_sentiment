@@ -3,6 +3,9 @@ This folder contains the code that was used in the project. It also contains the
 **get_all_documents.py**
 This is the file that was run to retrieve the datasets in both languages.
 
+**util_html.py**
+Functions for `get_all_documents.py`
+
 **extract_statistics.py**
 Run this file to read in the dataset, preprocess them, extract statistics as a dictionary
 and save the statistics as a .json file in the `data/statistics` folder. When run,
