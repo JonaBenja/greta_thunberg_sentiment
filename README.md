@@ -1,5 +1,11 @@
 ### INTRODUCTION
-This repository contains the code, data and analysis of assignment 1 for the course Language as Data. The students that contributed to this assignment are Gabriele Catanese and Jona Bosman. A blogpost with the results can be viewed here: [link]
+This repository contains the code, data and analysis of a project regarding sentiment analysis of articles about Greta Thunberg, for Dutch and Italian press. The project was created by Jona Bosman and Gabriele Cantanese. 
+
+The project attempts to answer the following research question: 
+How do the Dutch and Italian press differ in the sentiment about Greta Thunberg? 
+
+A blogpost presenting the results of the project can be found through this link:
+[link]
 
 ### CORPUS RETRIEVAL
 The corpus contains 101 recent articles in Dutch and and 103 recent articles in Italian about Greta Thunberg, that were retrieved from the Google News corpus.
