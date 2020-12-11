@@ -1,6 +1,6 @@
 This folder contains the code that was used in the project. It also contains the datafiles for the module Polyglot.
 
-**get_all_documents.py**
+`**get_all_documents.py**`
 This is the file that was run to retrieve the datasets in both languages.
 
 **util_html.py**
