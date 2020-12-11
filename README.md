@@ -1,29 +1,23 @@
-#README.txt
-
 ### INTRODUCTION
-This repository contains the code, data and analysis of assignment 1 for the course Language as Data. This students that contributed to this assignment are Gabriele Catanese and Jona Bosman.
+This repository contains the code, data and analysis of assignment 1 for the course Language as Data. This students that contributed to this assignment are Gabriele Catanese and Jona Bosman. A blogpost with the results can be viewed here: [link]
 
 ### CORPUS RETRIEVAL
-The corpus contains 100 recent articles in Dutch and Italian about Greta Thunberg, that were retrieved from the Google News corpus by using the query 'Greta Thunberg'.
+The corpus contains 101 recent articles in Dutch and and 103 recent articles in Italian about Greta Thunberg, that were retrieved from the Google News corpus.
 
 ISO-639-3 code for Dutch: 'nl'.
 ISO-639-3 code for Italian: 'it'.
 
 ### REPOSITORY STRUCTURE
 
-`it` is a folder that contains the Italian corpus (`it_greta.tsv`).
-`nl` is a folder that contains the Dutch corpus (`nl_greta.tsv`).
-`processed_articles` contains the corpora after they were processed by the Stanza language package (`it_articles_stanza` and `nl_articles_stanza`)
-`basic_statistics.py` contains the code for extracting basic statistics from both corpora.
-`utils.py` contains helper functions for `basic_statistics.py`.
-`basic_statistics.pdf` contains tables with the extracted statistics for each language.
+`code` contains all code that was used for the analysis that is described in the blogpost
+`data` contains all data needed for the analysis: the articles, annotations and results. A more detailed description can be found in the README.md in the data folder.
+`old code` contains all code that was written but eventually not used in the analysis.
 
 ### LINKS TO SOURCES AND LICENCES
-Stanza: http://www.apache.org/licenses/LICENSE-2.0
-The license for the Google News articles couldn't be retrieved in time but will be posted here later.
+Dutch queries: http://news.google.com/?q=greta+thunberg+opwarming&gl=nl and http://news.google.com/?q=greta+thunberg+klimaat&gl=nl
+Italian query: http://news.google.com/?q=greta+thunberg+riscaldamento&gl=it and http://news.google.com/?q=greta+thunberg+climatico&gl=it
 
-Dutch query: http://news.google.com/?q=greta+thunberg&gl=nl
-Italian query: http://news.google.com/?q=greta+thunberg&gl=it
+Stanza: http://www.apache.org/licenses/LICENSE-2.0
 
 ### INSTALLING POLYGLOT ON MAC OS
 
@@ -39,7 +33,7 @@ Italian query: http://news.google.com/?q=greta+thunberg&gl=it
 
 6) Run the file `polyglot_test.py` to make sure polyglot is correctly installed. If there are no errors, the installation was succesfull!
 
-### WINDOWS
+### INSTALLING POLYGLOT ON WINDOWS
 1) Follow the instructions given in these links:
 - https://github.com/Jcharis/Natural-Language-Processing-Tutorials/blob/master/NLP_with_Polyglot/NLP%20with%20Polyglot%20.ipynb
 - https://www.alirookie.com/post/install-polyglot-on-windows
@@ -83,5 +77,3 @@ or
 - check if you are using the right versions of the files above
 
 If nothing completely works after 1h of attempts, reach out to: gabrielecatanese@gmail.com
-
-NEW INFO
