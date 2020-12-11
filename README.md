@@ -1,31 +1,35 @@
+# lad-assignment1
+
+#README.txt
+
 ### INTRODUCTION
-This repository contains the code, data and analysis of a project regarding sentiment analysis of articles about Greta Thunberg, for Dutch and Italian press. The project was created by Jona Bosman and Gabriele Cantanese. 
-
-The project attempts to answer the following research question: 
-How do the Dutch and Italian press differ in the sentiment about Greta Thunberg? 
-
-A blogpost presenting the results of the project can be found through this link:
-[link]
+This repository contains the code, data and analysis of assignment 1 for the course Language as Data. This students that contributed to this assignment are Gabriele Catanese and Jona Bosman.
 
 ### CORPUS RETRIEVAL
-The corpus contains 101 recent articles in Dutch and and 103 recent articles in Italian about Greta Thunberg, that were retrieved from the Google News corpus.
+The corpus contains 100 recent articles in Dutch and Italian about Greta Thunberg, that were retrieved from the Google News corpus by using the query 'Greta Thunberg'.
 
 ISO-639-3 code for Dutch: 'nl'.
-
 ISO-639-3 code for Italian: 'it'.
 
 ### REPOSITORY STRUCTURE
 
-`code` contains all code that was used for the analysis that is described in the blogpost
+`it` is a folder that contains the Italian corpus (`it_greta.tsv`).
+`nl` is a folder that contains the Dutch corpus (`nl_greta.tsv`).
+`processed_articles` contains the corpora after they were processed by the Stanza language package (`it_articles_stanza` and `nl_articles_stanza`)
+`basic_statistics.py` contains the code for extracting basic statistics from both corpora.
+`utils.py` contains helper functions for `basic_statistics.py`.
+`basic_statistics.pdf` contains tables with the extracted statistics for each language.
 
-`data` contains all data needed for the analysis: the articles, annotations and results. A more detailed description can be found in the README.md in the data folder.
+### EMBEDDINGS
+We trained our word embeddings model on a 2019 news corpus from Leipzig Corpora.
+You can download it from our github: greta_thunberg_sentiment>data>embedding_models
 
 ### LINKS TO SOURCES AND LICENCES
-Dutch queries: http://news.google.com/?q=greta+thunberg+opwarming&gl=nl and http://news.google.com/?q=greta+thunberg+klimaat&gl=nl
+Stanza: http://www.apache.org/licenses/LICENSE-2.0
+The license for the Google News articles couldn't be retrieved in time but will be posted here later.
 
-Italian query: http://news.google.com/?q=greta+thunberg+riscaldamento&gl=it and http://news.google.com/?q=greta+thunberg+climatico&gl=it
-
-Stanza license: http://www.apache.org/licenses/LICENSE-2.0
+Dutch query: http://news.google.com/?q=greta+thunberg&gl=nl
+Italian query: http://news.google.com/?q=greta+thunberg&gl=it
 
 ### INSTALLING POLYGLOT ON MAC OS
 
@@ -41,7 +45,7 @@ Stanza license: http://www.apache.org/licenses/LICENSE-2.0
 
 6) Run the file `polyglot_test.py` to make sure polyglot is correctly installed. If there are no errors, the installation was succesfull!
 
-### INSTALLING POLYGLOT ON WINDOWS
+### WINDOWS
 1) Follow the instructions given in these links:
 - https://github.com/Jcharis/Natural-Language-Processing-Tutorials/blob/master/NLP_with_Polyglot/NLP%20with%20Polyglot%20.ipynb
 - https://www.alirookie.com/post/install-polyglot-on-windows
@@ -60,20 +64,20 @@ The files that we used on Windows:
 Then run these in the command line to install the files
 (make sure you activate the LaD environment and that you are in the right directory (ex. C:\Users\YourName)):
 
-- `pip install pycld2‑0.41‑cp38‑cp38‑win_amd64.whl`
-- `pip install PyICU‑2.6‑cp38‑cp38‑win_amd64.whl`
-- `git clone https://github.com/aboSamoor/polyglot.git`
+- pip install pycld2‑0.41‑cp38‑cp38‑win_amd64.whl
+- pip install PyICU‑2.6‑cp38‑cp38‑win_amd64.whl
+- git clone https://github.com/aboSamoor/polyglot.git
 When you clone the file from git, extract the content in the same directory that you were using for PyCDL and PyICU.
  
 3) Explore the content of the downloaded git folder that should be named 'polyglot':
 - find the child folder named with the same name 'polyglot' inside it (ex. C:>Users>YourName>polyglot>polyglot (like a matryoshka :D ))
 - take the 'polyglot' folder out of the parent folder
-- put it in the same directory (do not substitute the original file! To avoid that, you can rename the parent folder) 
+- put it in the same directory (do not substitute the original file! To avoid that, you can rename the parent folder)
 
 4) FINALLY run on the command line:
-- `python setup.py install`
+- python setup.py install
 or 
-- `pip install polyglot`
+- pip install polyglot
 
 If you run into errors, even though you carefully followed the steps above, check the following link:
 - https://www.alirookie.com/post/install-polyglot-on-windows
@@ -84,4 +88,4 @@ or
 - check if you have numpy installed (polyglot is based on numpy)
 - check if you are using the right versions of the files above
 
-If nothing completely works after 1h of attempts, reach out to: gabrielecatanese@gmail.com
+If nothing compleately works after 1h of attempts, reach out to: gabrielecatanese@gmail.com
