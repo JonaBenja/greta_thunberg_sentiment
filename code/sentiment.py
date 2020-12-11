@@ -8,7 +8,7 @@ import numpy as np
 """
 DUTCH
 """
-"""
+
 # Prepare dictionaries
 sents_sentiment = defaultdict(list)
 
@@ -41,9 +41,8 @@ plt.title('MEAN ARTICLE SENTIMENT OF DUTCH PUBLISHERS')
 plt.bar(x, y)
 fig.tight_layout()
 fig.savefig("../data/plots/nl_publisher_sentiment.png")
-plt.show()
+#plt.show()
 
-"""
 
 """
 ITALIAN
@@ -76,7 +75,7 @@ top10_publishers = sorted(d, key=lambda k: len(d[k]), reverse=True)[:10]
 SENTIMENT PLOT
 """
 
-fig, ax = plt.subplots(1, 1, figsize = (12, 6))
+fig, ax = plt.subplots(1, 1, figsize = (17, 6))
 x = top10_publishers
 y = [art_pub_sent[publisher] for publisher in top10_publishers]
 plt.xlabel('PUBLISHER')

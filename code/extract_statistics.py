@@ -239,3 +239,6 @@ with open('../data/statistics/nl_statistics.json', 'w') as outfile:
 
 with open('../data/statistics/it_statistics.json', 'w') as outfile:
     json.dump(it_statistics, outfile)
+
+print(nl_stopwords)
+print(it_stopwords)
