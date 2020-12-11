@@ -1,0 +1,34 @@
+ANNOTATION GUIDELINES
+
+The dataset contains 45 Dutch sentences and 45 Italian sentences. For each language, 15 sentences include the target word 'activist' in Dutch and Italian, 15 sentences include the target word 'climate' in Dutch and Italian and 15 sentences include the target word 'politicians' in Dutch and Italian. 
+
+For each sentence, the sentiment of the use of the target word was annotated as ‘positive’, ‘negative’ or ‘neutral’. The annotation was thus not about the sentiment of the whole sentence, but about the use of a term. The focus of the annotation should lie on the part of the sentence that features the target word.
+
+Consider the following as a guideline:
+
+A sentence expresses positive sentiment for the target word when:
+The target word is described by positive words, like ‘good’, ‘better’, ‘great’.
+The sentence used the target word in a positive connotation.
+For target words ‘activist’ and ‘politicians’: when the sentence describes a positive response from others to these words.
+
+A sentence expresses negative sentiment for a target word when: 
+The target word is described by negative words, like ‘worse’.
+The sentence used the target word in a negative connotation.
+For target words ‘activist’ and ‘politicians’: when the sentence describes resistance or  dissatisfaction of others to these words.
+
+A sentence expresses neutral sentiment for a target word when:
+The sentence is informative
+`The target word is not described by any positive or negative words.
+
+Example sentences with annotation:
+
+‘A large crowd welcomed the activist.’				→	positive
+‘These politicians were held responsible for the catastrophe.’	→ 	negative
+‘Yesterday, a climate conference was held.’				→ 	neutral
+
+If an annotator is not fluent in Dutch and/or Italian, they can make use of additional resources, like machine translators (Google Translate) and dictionaries, or consultation of a native speaker.
+
+
+
+
+

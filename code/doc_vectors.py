@@ -1,10 +1,6 @@
 import spacy
 import pandas as pd
-from spacy.vocab import Vocab
-from scipy.spatial.distance import cosine
 from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
-import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import numpy as np
 import matplotlib.patches as mpatches
@@ -18,7 +14,7 @@ clusters = content['Cluster']
 nlp = spacy.load("nl_core_news_lg")
 doc_vectors = [nlp(doc).vector for doc in articles]
 
-# Apply dimensionality reduction with PCA or T-SNE
+# Apply dimensionality reduction with PCA
 reduction_technique = PCA(n_components=2)
 
 print("Calculate dimensionality reduction")
@@ -41,7 +37,7 @@ for x, y, cluster in zip(x_values, y_values, clusters):
 
 # Add title and description
 ax.set_title('Dutch document vectors')
-description = "Dutch document vectors reduced to two dimensions using the t-sne algorithm. "
+description = "Dutch document vectors reduced to two dimensions using the PCA algorithm. "
 fig.text(.51, .05, description, ha="center", fontsize=12)
 
 # Hide the ticks
@@ -96,7 +92,7 @@ for x, y, cluster in zip(x_values, y_values, clusters):
 
 # Add title and description
 ax.set_title('Italian document vectors')
-description = "Italian document vectors reduced to two dimensions using the t-sne algorithm. "
+description = "Italian document vectors reduced to two dimensions using the PCA algorithm. "
 fig.text(.51, .05, description, ha="center", fontsize=12)
 
 # Hide the ticks

@@ -3,7 +3,6 @@ import glob
 import os.path
 from itertools import combinations
 from sklearn.metrics import cohen_kappa_score, confusion_matrix
-import nltk
 
 nl_terms = ["activist", "politici", "klimaat"]
 it_terms = ["attivist", "politici", "climatico"]

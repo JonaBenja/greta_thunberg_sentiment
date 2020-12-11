@@ -3,14 +3,10 @@ import stanza
 import string
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
-import pickle
-from collections import defaultdict, Counter
-import nltk
+from collections import defaultdict
 from gensim.models import KeyedVectors
 from sklearn.cluster import KMeans
-import json
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
+
 
 """
 DUTCH DOCUMENT KEYWORDS
