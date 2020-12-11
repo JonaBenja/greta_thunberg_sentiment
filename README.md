@@ -14,8 +14,6 @@ ISO-639-3 code for Italian: 'it'.
 
 `data` contains all data needed for the analysis: the articles, annotations and results. A more detailed description can be found in the README.md in the data folder.
 
-`old code` contains all code that was written but eventually not used in the analysis.
-
 ### LINKS TO SOURCES AND LICENCES
 Dutch queries: http://news.google.com/?q=greta+thunberg+opwarming&gl=nl and http://news.google.com/?q=greta+thunberg+klimaat&gl=nl
 
