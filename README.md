@@ -52,9 +52,9 @@ The files that we used on Windows:
 Then run these in the command line to install the files
 (make sure you activate the LaD environment and that you are in the right directory (ex. C:\Users\YourName)):
 
-- pip install pycld2‑0.41‑cp38‑cp38‑win_amd64.whl
-- pip install PyICU‑2.6‑cp38‑cp38‑win_amd64.whl
-- git clone https://github.com/aboSamoor/polyglot.git
+- `pip install pycld2‑0.41‑cp38‑cp38‑win_amd64.whl`
+- `pip install PyICU‑2.6‑cp38‑cp38‑win_amd64.whl`
+- `git clone https://github.com/aboSamoor/polyglot.git`
 When you clone the file from git, extract the content in the same directory that you were using for PyCDL and PyICU.
  
 3) Explore the content of the downloaded git folder that should be named 'polyglot':
@@ -63,9 +63,9 @@ When you clone the file from git, extract the content in the same directory that
 - put it in the same directory (do not substitute the original file! To avoid that, you can rename the parent folder) 
 
 4) FINALLY run on the command line:
-- python setup.py install
+- `python setup.py install`
 or 
-- pip install polyglot
+- `pip install polyglot`
 
 If you run into errors, even though you carefully followed the steps above, check the following link:
 - https://www.alirookie.com/post/install-polyglot-on-windows
