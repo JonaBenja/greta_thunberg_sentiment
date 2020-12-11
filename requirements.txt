@@ -1,0 +1,26 @@
+This file states which modules and models are necessary to run the code for this project:
+
+### Python Modules
+* NLTK
+* SpaCy
+* Stanza
+* Polyglot
+
+A tutorial for installing Polyglot on both Windows and Apple machines can be found in the README.md file in the main
+folder.
+
+### Word Embedding Models
+The data for the Dutch and Italian word embeddings used for clustering were retrieved from:
+https://wortschatz.uni-leipzig.de/en/download/
+
+Dutch data: 'nld_newscrawl_2019_1M.tar.gz'
+Italian data: 'ita_newscrawl_2019_1M.tar.gz'
+
+For computing the document vectors, two word embedding models from SpaCy were used:
+
+Dutch embeddings: 'nl_core_news_lg'
+Italian embeddings: 'it_core_news_lg'
+
+The embedding models can be downloaded from: https://spacy.io/usage/models
+
+
