@@ -1,5 +1,8 @@
 This folder contains the code that was used in the project. It also contains the datafiles for the module Polyglot.
 
+**get_all_documents.py**
+This is the file that was run to retrieve the datasets in both languages.
+
 **extract_statistics.py**
 Run this file to read in the dataset, preprocess them, extract statistics as a dictionary
 and save the statistics as a .json file in the `data/statistics` folder. When run,
@@ -7,6 +10,9 @@ the new .json files will overwrite the old ones.
 
 **utils.py**
 Functions for `extract_statistics.py`
+
+**create_annotation_sheets**
+Creates 3 annotation sheets for each dataset, for each annotator.
 
 **evaluate_annotation.py**
 Evaluates the annotation performed on a selection of articles and outputs the evaluation in tables.
