@@ -15,3 +15,5 @@ This folder contains all data that was used in this project.
 * `nl` The Dutch dataset
 
 * `it` The Italian dataset
+
+* `annotation_guidelines.txt` The annotation guidlines that were followed during annotation.
