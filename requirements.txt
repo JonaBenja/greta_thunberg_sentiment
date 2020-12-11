@@ -9,6 +9,11 @@ This file states which modules and models are necessary to run the code for this
 A tutorial for installing Polyglot on both Windows and Apple machines can be found in the README.md file in the main
 folder.
 
+* Scikit Learn
+* Matplotlib
+* Seaborn
+
+
 ### Word Embedding Models
 The data for the Dutch and Italian word embeddings used for clustering were retrieved from:
 https://wortschatz.uni-leipzig.de/en/download/
