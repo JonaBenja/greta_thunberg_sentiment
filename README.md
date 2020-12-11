@@ -5,19 +5,23 @@ This repository contains the code, data and analysis of assignment 1 for the cou
 The corpus contains 101 recent articles in Dutch and and 103 recent articles in Italian about Greta Thunberg, that were retrieved from the Google News corpus.
 
 ISO-639-3 code for Dutch: 'nl'.
+
 ISO-639-3 code for Italian: 'it'.
 
 ### REPOSITORY STRUCTURE
 
 `code` contains all code that was used for the analysis that is described in the blogpost
+
 `data` contains all data needed for the analysis: the articles, annotations and results. A more detailed description can be found in the README.md in the data folder.
+
 `old code` contains all code that was written but eventually not used in the analysis.
 
 ### LINKS TO SOURCES AND LICENCES
 Dutch queries: http://news.google.com/?q=greta+thunberg+opwarming&gl=nl and http://news.google.com/?q=greta+thunberg+klimaat&gl=nl
+
 Italian query: http://news.google.com/?q=greta+thunberg+riscaldamento&gl=it and http://news.google.com/?q=greta+thunberg+climatico&gl=it
 
-Stanza: http://www.apache.org/licenses/LICENSE-2.0
+Stanza license: http://www.apache.org/licenses/LICENSE-2.0
 
 ### INSTALLING POLYGLOT ON MAC OS
 
