@@ -10,20 +10,12 @@ import json
 
 # Read in the Dutch data and Stanza pipeline
 nl_nlp = stanza.Pipeline('nl')
-
 nl_content = pd.read_csv('../data/nl/nl_greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
-
-#nl_content.fillna('Unknown')
-
 nl_statistics = defaultdict(dict)
 
 # Read in the Italian data and Stanza pipeline
 it_nlp = stanza.Pipeline('it')
-
 it_content = pd.read_csv('../data/it/it_greta_overview.tsv', sep="\t", header = 0, keep_default_na=False, encoding = 'utf-8', error_bad_lines=False)
-
-#it_content.fillna('Unknown')
-
 it_statistics = defaultdict(dict)
 
 """
@@ -77,9 +69,13 @@ it_statistics['content']['mean_title_length'] = sum(title_lengths)/len(title_len
 """
 CONTENT
 """
+
 # Get stopwords of languages from NLTK
 nl_stopwords = nltk.corpus.stopwords.words('dutch')
+
+# Manual enrichment of stopwords
 nl_stopwords.extend(['gaan', 'we', 'zeggen', 'moeten', 'maken', 'zien'])
+
 it_stopwords = nltk.corpus.stopwords.words('italian')
 it_stopwords.extend(['essere', 'avere', 'fare'])
 
