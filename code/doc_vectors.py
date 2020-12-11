@@ -54,5 +54,5 @@ cluster3 = mpatches.Circle((0.1, 0.1), color=colors[2], label='Cluster 3')
 cluster4 = mpatches.Circle((0.1, 0.1), color=colors[3], label='Cluster 4')
 
 plt.legend(handles=[cluster1, cluster2, cluster3, cluster4])
-
+fig.savefig("../data/plots/nl_clusterplot.png")
 plt.show()
