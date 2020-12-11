@@ -17,6 +17,7 @@ ISO-639-3 code for Italian: 'it'.
 ### REPOSITORY STRUCTURE
 
 `code` This folder contains all the code that was used in the project.
+
 `data` This folder contains all the data that was used for this prokect.
 
 ### EMBEDDINGS
