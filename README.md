@@ -1,5 +1,5 @@
 ### INTRODUCTION
-This repository contains the code, data and analysis of assignment 1 for the course Language as Data. This students that contributed to this assignment are Gabriele Catanese and Jona Bosman. A blogpost with the results can be viewed here: [link]
+This repository contains the code, data and analysis of assignment 1 for the course Language as Data. The students that contributed to this assignment are Gabriele Catanese and Jona Bosman. A blogpost with the results can be viewed here: [link]
 
 ### CORPUS RETRIEVAL
 The corpus contains 101 recent articles in Dutch and and 103 recent articles in Italian about Greta Thunberg, that were retrieved from the Google News corpus.
