@@ -1,9 +1,12 @@
 # lad-assignment1
 
-#README.txt
-
 ### INTRODUCTION
-This repository contains the code, data and analysis of assignment 1 for the course Language as Data. This students that contributed to this assignment are Gabriele Catanese and Jona Bosman.
+This repository contains the code, data and analysis of a project about sentiment analysis on articles about Greta Thunberg. The project was created by Jona Bosman and Gabriele Catanese.
+
+The question we attempted to answer with this project was: 
+Does the sentiment in articles about Greta Thunberg differ for Dutch and Italian press?
+
+A blogpost containing the analysis of this project can by found at: https://languageasdata.wordpress.com/2020/12/11/how-do-the-italian-and-dutch-press-feel-about-greta-thunberg/
 
 ### CORPUS RETRIEVAL
 The corpus contains 100 recent articles in Dutch and Italian about Greta Thunberg, that were retrieved from the Google News corpus by using the query 'Greta Thunberg'.
@@ -13,12 +16,8 @@ ISO-639-3 code for Italian: 'it'.
 
 ### REPOSITORY STRUCTURE
 
-`it` is a folder that contains the Italian corpus (`it_greta.tsv`).
-`nl` is a folder that contains the Dutch corpus (`nl_greta.tsv`).
-`processed_articles` contains the corpora after they were processed by the Stanza language package (`it_articles_stanza` and `nl_articles_stanza`)
-`basic_statistics.py` contains the code for extracting basic statistics from both corpora.
-`utils.py` contains helper functions for `basic_statistics.py`.
-`basic_statistics.pdf` contains tables with the extracted statistics for each language.
+`code` This folder contains all the code that was used in the project.
+`data` This folder contains all the data that was used for this prokect.
 
 ### EMBEDDINGS
 We trained our word embeddings model on a 2019 news corpus from Leipzig Corpora.
@@ -45,7 +44,7 @@ Italian query: http://news.google.com/?q=greta+thunberg&gl=it
 
 6) Run the file `polyglot_test.py` to make sure polyglot is correctly installed. If there are no errors, the installation was succesfull!
 
-### WINDOWS
+### INSTALLING POLYGLOT ON WINDOWS
 1) Follow the instructions given in these links:
 - https://github.com/Jcharis/Natural-Language-Processing-Tutorials/blob/master/NLP_with_Polyglot/NLP%20with%20Polyglot%20.ipynb
 - https://www.alirookie.com/post/install-polyglot-on-windows
